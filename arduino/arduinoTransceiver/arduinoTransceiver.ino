@@ -13,6 +13,7 @@ DallasTemperature sensors(&oneWire);
 
 void setup() {
   // put your setup code here, to run once:
+  Serial.begin(9600);
   radio.begin();
   radio.setPALevel(RF24_PA_MAX);
   radio.setChannel(0x76);
