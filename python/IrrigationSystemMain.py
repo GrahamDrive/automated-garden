@@ -13,7 +13,7 @@ import valve
 import weatherForecast as weather
 from cpuTemp import getCPUtemperature
 import sys
-import Email
+#import Email
 
 GPIO.setmode(GPIO.BCM)
 Dry = 410
@@ -49,8 +49,8 @@ while len(message) < 32:
 starttime = time.time()
 while(1):
     if float(getCPUtemperature()) > 70:
-        Email.SENDMAIL("""Irrigation System
-                        overheat and shutdown""", "Overheat!")
+        #Email.SENDMAIL("""Irrigation System
+        #                overheat and shutdown""", "Overheat!")
         sys.exit("OverHeating")
     start = time.time()
     radio.write(message)
