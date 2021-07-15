@@ -60,6 +60,7 @@ while(1):
 
     while not radio.available(0):
         time.sleep(1 / 100)
+        break
 
     receivedMessage = []
     radio.read(receivedMessage, radio.getDynamicPayloadSize())
