@@ -60,9 +60,6 @@ while(1):
 
     while not radio.available(0):
         time.sleep(1 / 100)
-        if time.time() - start > 2:
-            print("Timed out.")
-            break
 
     receivedMessage = []
     radio.read(receivedMessage, radio.getDynamicPayloadSize())
