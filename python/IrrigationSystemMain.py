@@ -47,6 +47,7 @@ message = list("GETDATA")
 while len(message) < 32:
     message.append(0)
 starttime = time.time()
+
 while(1):
     if float(getCPUtemperature()) > 70:
         #Email.SENDMAIL("""Irrigation System
@@ -57,10 +58,9 @@ while(1):
     print("")
     print("Sent the message: {}".format(message))
     radio.startListening()
-
+    print(radio.available(0))
     while not radio.available(0):
         time.sleep(1 / 100)
-        break
 
     receivedMessage = []
     radio.read(receivedMessage, radio.getDynamicPayloadSize())
