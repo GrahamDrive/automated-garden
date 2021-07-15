@@ -61,6 +61,8 @@ while(1):
     print(radio.available(0))
     while not radio.available(0):
         time.sleep(1 / 100)
+        if time.time() - start > 2:
+            break
 
     receivedMessage = []
     radio.read(receivedMessage, radio.getDynamicPayloadSize())
